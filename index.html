@@ -3,11 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <title>Artist Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Poop and Shit</h1>
+    <video autoplay muted loop id="background-video">
+        <source src="media/background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="content">
+        <header>
+            <h1>Artist Name</h1>
+            <nav>
+                <ul>
+                    <li><a href="resume.html"><img src="media/resume.jpg" alt="Resume"></a></li>
+                    <li><a href="3d.html"><img src="media/3d.jpg" alt="3D"></a></li>
+                    <li><a href="posters.html"><img src="media/posters.jpg" alt="Posters"></a></li>
+                    <li><a href="gallery.html"><img src="media/gallery.jpg" alt="Gallery"></a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <section id="about">
+            <h2>About the Artist</h2>
+            <p>Brief bio about the artist.</p>
+        </section>
+        
+        <footer>
+            <p>&copy; 2025 Artist Name. All rights reserved.</p>
+        </footer>
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
