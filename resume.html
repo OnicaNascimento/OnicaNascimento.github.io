@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #77aaff 3px solid;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+        }
+        header li {
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+        .showcase {
+            min-height: 400px;
+            background: url('media/showcase.jpg') no-repeat 0 -400px;
+            text-align: center;
+            color: #fff;
+        }
+        .showcase h1 {
+            margin-top: 100px;
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+        .showcase p {
+            font-size: 20px;
+        }
+        .skills, .experience {
+            margin: 20px 0;
+            padding: 20px;
+            background: #fff;
+            border-radius: 5px;
+        }
+        .skills h2, .experience h2 {
+            text-align: center;
+            color: #333;
+        }
+        .skills ul, .experience ul {
+            list-style: none;
+            padding: 0;
+        }
+        .skills li, .experience li {
+            background: #f4f4f4;
+            margin: 10px 0;
+            padding: 10px;
+            border-left: #77aaff 5px solid;
+        }
+        .media {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .media img, .media video {
+            max-width: 45%;
+            margin: 10px;
+            border: 2px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Artist Resume</h1>
+            <nav>
+                <ul>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#media">Media</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="showcase">
+        <div class="container">
+            <h1>Onica Nascimento</h1>
+            <p>Creative Artist & Designer</p>
+        </div>
+    </section>
+
+    <section id="skills" class="skills container">
+        <h2>Skills</h2>
+        <ul>
+            <li>Painting</li>
+            <li>Sketching</li>
+            <li>Graphic Design</li>
+            <li>Photography</li>
+            <li>Video Editing</li>
+        </ul>
+    </section>
+
+    <section id="experience" class="experience container">
+        <h2>Experience</h2>
+        <ul>
+            <li>Freelance Artist - 2015 to Present</li>
+            <li>Graphic Designer at XYZ Studio - 2018 to 2020</li>
+            <li>Art Instructor at ABC School - 2016 to 2018</li>
+        </ul>
+    </section>
+
+    <section id="media" class="media container">
+        <h2>Media</h2>
+        <img src="media/image1.jpg" alt="Artwork 1">
+        <img src="media/image2.jpg" alt="Artwork 2">
+        <video controls>
+            <source src="media/video1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video controls>
+            <source src="media/video2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+</body>
+</html>
