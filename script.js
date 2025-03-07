@@ -3,11 +3,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const mainContent = document.getElementById('main-content');
     const introVideoContainer = document.getElementById('intro-video-container');
 
-    introVideo.onended = function() {
+    function showMainContent() {
         introVideoContainer.style.display = 'none';
         mainContent.style.display = 'block';
         setTimeout(() => {
             mainContent.style.opacity = 1;
         }, 50); // Small delay to ensure display change is processed
-    };
+    }
+
+    introVideo.onended = showMainContent;
+    document.addEventListener('keydown', showMainContent);
+    document.addEventListener('click', showMainContent);
 });

@@ -83,3 +83,15 @@ footer {
     background-color: rgba(0, 0, 0, 0.7);
     padding: 1rem 0;
 }
+#intro-video-container {
+    transition: opacity 0.5s ease;
+}
+
+#main-content {
+    transition: opacity 0.5s ease;
+    opacity: 0;
+}
+
+#main-content.show {
+    opacity: 1;
+}
