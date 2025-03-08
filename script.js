@@ -14,4 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     introVideo.onended = showMainContent;
     document.addEventListener('keydown', showMainContent);
     document.addEventListener('click', showMainContent);
+
+    // Timeout to skip the intro video after 20 seconds
+    setTimeout(showMainContent, 20000); // 20000 milliseconds = 20 seconds
 });
