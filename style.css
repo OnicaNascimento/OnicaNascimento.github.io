@@ -45,6 +45,9 @@ header {
     background-color: rgba(0, 0, 0, 0.7);
     padding: 0.5rem; /* Adjusted padding */
     margin: 0; /* Remove margin */
+    border-radius: 8px;
+    width: fit-content; /* Fit content width */
+    position: relative;
 }
 
 header h1 {
@@ -94,6 +97,9 @@ footer {
     background-color: rgba(0, 0, 0, 0.7);
     padding: 0.5rem; /* Adjusted padding */
     margin: 0; /* Remove margin */
+    border-radius: 8px;
+    width: fit-content; /* Fit content width */
+    position: relative;
 }
 
 #intro-video-container {
