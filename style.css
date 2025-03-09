@@ -93,6 +93,10 @@ section:nth-child(even) {
     right: 0; /* Position even sections to the right */
 }
 
+section:nth-child(n) {
+    top: calc(20% * (n - 1)); /* Stagger vertical position */
+}
+
 footer {
     background-color: rgba(0, 0, 0, 0.7);
     padding: 0.5rem; /* Adjusted padding */
