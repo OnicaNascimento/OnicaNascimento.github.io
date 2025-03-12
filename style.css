@@ -39,15 +39,17 @@ body {
     display: none; /* Initially hidden */
     opacity: 0; /* Initially transparent */
     transition: opacity 2s; /* Fade-in effect */
+    min-height: 100vh; /* Ensure full height */
 }
 
 header {
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 0.5rem; /* Adjusted padding */
-    margin: 0; /* Remove margin */
+    background-color: rgba(0, 0, 0, 0.3);  /* More transparent */
+    padding: 1rem;
+    margin: 0;
     border-radius: 8px;
-    width: fit-content; /* Fit content width */
-    position: absolute;
+    width: fit-content;
+    position: relative;  /* Changed from absolute for better flow */
+    margin: 2rem auto;  /* Center horizontally and add vertical space */
 }
 
 header h1 {
@@ -59,50 +61,80 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 2rem auto;
+    position: relative;
+    gap: 2rem;  /* Add consistent spacing between items */
 }
 
 nav ul li {
-    margin: 0 1rem;
+    margin: -20px 1rem;  /* Negative margin for vertical overlap */
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+nav ul li:nth-child(odd) {
+    transform: translateY(30px);  /* Stagger odd-numbered items down */
+}
+
+nav ul li:hover {
+    z-index: 2;  /* Bring hovered item to front */
+    transform: scale(1.1) translateY(30px);  /* Maintain stagger while scaling */
+}
+
+nav ul li:nth-child(even):hover {
+    transform: scale(1.1) translateY(0);  /* Reset transform for even items */
 }
 
 nav ul li a img {
-    width: 100px;
-    height: 100px;
-    border-radius: 8px;
-    transition: transform 0.3s;
+    width: 150px;  /* Increased size */
+    height: 150px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 nav ul li a img:hover {
-    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 section {
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 0.5rem; /* Adjusted padding */
-    margin: 1rem 0;
+    background-color: rgba(0, 0, 0, 0.3);  /* More transparent */
+    padding: 1.5rem;
+    margin: 4rem auto;  /* Increased vertical spacing */
     border-radius: 8px;
-    width: fit-content; /* Fit content width */
-    position: absolute;
+    width: fit-content;
+    max-width: 90%;
+    position: relative;
+    display: block; /* Ensure visibility */
 }
 
+/* Remove the positioning styles that were hiding sections */
+section:nth-child(odd),
+section:nth-child(even),
+section:nth-child(n) {
+    left: auto;
+    right: auto;
+    top: auto;
+    position: relative;
+}
+
+/* Add some visual interest to sections */
 section:nth-child(odd) {
-    left: 0; /* Position odd sections to the left */
+    transform: translateX(-20px);
 }
 
 section:nth-child(even) {
-    right: 0; /* Position even sections to the right */
-}
-
-section:nth-child(n) {
-    top: calc(20% * (n - 1)); /* Stagger vertical position */
+    transform: translateX(20px);
 }
 
 footer {
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 0.5rem; /* Adjusted padding */
-    margin: 0; /* Remove margin */
+    background-color: rgba(0, 0, 0, 0.3);  /* More transparent */
+    padding: 1rem;
     border-radius: 8px;
-    width: fit-content; /* Fit content width */
+    width: fit-content;
+    margin: 4rem auto 2rem;
     position: relative;
 }
 
@@ -117,4 +149,55 @@ footer {
 
 #main-content.show {
     opacity: 1;
+}
+
+/* Add responsive design for mobile devices */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    nav ul li {
+        margin: 0;  /* Remove negative margins on mobile */
+    }
+
+    nav ul li:nth-child(odd) {
+        transform: none;  /* Remove stagger on mobile */
+    }
+
+    nav ul li:hover {
+        transform: scale(1.1);  /* Simplify hover effect on mobile */
+    }
+
+    nav ul li a img {
+        width: 120px;  /* Slightly smaller images on mobile */
+        height: 120px;
+    }
+
+    section:nth-child(odd),
+    section:nth-child(even) {
+        transform: none;  /* Remove horizontal offset on mobile */
+        margin: 2rem auto;  /* Reduce spacing on mobile */
+        width: 85%;
+    }
+    
+    section {
+        padding: 1rem;
+        margin: 2rem auto;
+    }
+}
+
+/* Add larger screen responsive adjustments */
+@media screen and (min-width: 769px) {
+    .content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 3rem;
+    }
+    
+    section {
+        margin: 4rem auto;  /* More vertical spacing on desktop */
+    }
 }
