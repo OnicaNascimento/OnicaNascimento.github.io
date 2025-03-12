@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function showMainContent() {
         introVideoContainer.style.display = 'none';
-        mainContent.style.display = 'block';
+        mainContent.style.display = 'flex';
+        mainContent.classList.add('show');
         setTimeout(() => {
             mainContent.style.opacity = 1;
         }, 50); // Small delay to ensure display change is processed
